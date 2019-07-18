@@ -46,12 +46,12 @@ class SearchInformation extends React.Component {
     return (
       <div className='search-bar-container'>
         <div className='website-name-container'>
-          <h1 className='website-name'>Web Name</h1>
+          <h1 className='website-name'>WikiTeam</h1>
         </div>
 
         <div>
           <form onSubmit={this.getTeamInformation}> 
-            <input className='search-input' value={this.state.teamName} onChange={this.getSelectedTeam}/>
+            <input className='search-input' value={this.state.teamName} placeholder='e.g. New York Knicks' onChange={this.getSelectedTeam}/>
             <button className='search-button'><i className="fab fa-searchengin"></i></button>
           </form>
         </div>

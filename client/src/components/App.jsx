@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Search from './Search.jsx'
+import Banner from './Banner.jsx'
 
 import axios from 'axios'
 
@@ -11,6 +12,7 @@ window.store = store
 const App = () => (
   <div>
     <Search />
+    <Banner />
   </div>
 )
 
