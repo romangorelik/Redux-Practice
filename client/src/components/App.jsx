@@ -2,6 +2,8 @@ import React from 'react'
 
 import Search from './Search.jsx'
 import Banner from './Banner.jsx'
+import TopImageBanner from './TopImageBanner.jsx'
+import RSSfeed from './RSSfeed.jsx'
 
 import axios from 'axios'
 
@@ -13,6 +15,8 @@ const App = () => (
   <div>
     <Search />
     <Banner />
+    <TopImageBanner />
+    <RSSfeed />
   </div>
 )
 

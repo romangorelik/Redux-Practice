@@ -13,7 +13,9 @@ const mapStateToProps = state => {
 
 const BannerInfo = ({ teamName, teamBadge }) => (
   <div className='banner-container'>
-    <img className='banner-badge' src={teamBadge}/>
+    <div className='banner-badge-container'>
+      <img className='banner-badge' src={teamBadge}/>
+    </div>
     <h1 className='banner-name'>{teamName}</h1>
   </div>
 )

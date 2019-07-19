@@ -5,11 +5,12 @@ import '../../dist/styles/search.css'
 import axios from 'axios'
 
 import { connect } from 'react-redux'
-import { addTeam } from '../redux-state/actions/index'
+import { addTeam, addRSSTeam } from '../redux-state/actions/index'
 
 function mapDispatchToProps (dispatch) {
   return {
-    addTeam: team => dispatch(addTeam(team))
+    addTeam: team => dispatch(addTeam(team)),
+    addRSSTeam: teamRSS => dispatch(addRSSTeam(teamRSS))
   }
 }
 
@@ -29,11 +30,29 @@ class SearchInformation extends React.Component {
     })
     .then(response => {
       this.props.addTeam(response.data)
+
+      if (response.data.strRSS) {
+        this.getNewInfo(response.data.strRSS)
+      } else {
+        this.props.addRSSTeam([])
+      }
       this.setState({
         teamName: ''
       })
     })
     .catch(err => console.error(err))
+  }
+
+  getNewInfo = (link) => {
+    axios.get('/teamRecentNews', {
+      params: {
+        teamRSS: link
+      }
+    })
+      .then(response => {
+        this.props.addRSSTeam(response.data.rss.channel.item)
+      })
+      .catch(err => console.error(err))
   }
 
   getSelectedTeam = (e) => {
@@ -51,7 +70,7 @@ class SearchInformation extends React.Component {
 
         <div>
           <form onSubmit={this.getTeamInformation}> 
-            <input className='search-input' value={this.state.teamName} placeholder='e.g. New York Knicks' onChange={this.getSelectedTeam}/>
+            <input className='search-input' value={this.state.teamName} placeholder='e.g. Brooklyn Nets' onChange={this.getSelectedTeam}/>
             <button className='search-button'><i className="fab fa-searchengin"></i></button>
           </form>
         </div>

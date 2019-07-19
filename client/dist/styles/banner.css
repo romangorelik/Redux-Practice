@@ -3,6 +3,13 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to bottom, #222, black);
+  height: 200px;
+}
+
+.banner-badge-container {
+  width: 100%;
+  text-align: center;
 }
 
 .banner-badge {
