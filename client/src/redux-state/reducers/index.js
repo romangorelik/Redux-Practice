@@ -1,5 +1,7 @@
 const initialState = {
-  teamInfo: {},
+  teamInfo: {
+    strDescriptionEN: ''
+  },
   teamRSS: []
 }
 

@@ -4,6 +4,7 @@ import Search from './Search.jsx'
 import Banner from './Banner.jsx'
 import TopImageBanner from './TopImageBanner.jsx'
 import RSSfeed from './RSSfeed.jsx'
+import TeamInfo from './TeamInfo.jsx'
 
 import axios from 'axios'
 
@@ -17,6 +18,7 @@ const App = () => (
     <Banner />
     <TopImageBanner />
     <RSSfeed />
+    <TeamInfo />
   </div>
 )
 
