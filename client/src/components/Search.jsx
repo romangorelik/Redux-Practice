@@ -1,4 +1,5 @@
 import React from 'react'
+import Favorites from './Favorites.jsx'
 
 import '../../dist/styles/search.css'
 
@@ -76,7 +77,7 @@ class SearchInformation extends React.Component {
         </div>
 
         <div className='favorites-container'>
-          <h1 className='favorites'>Favorites</h1>
+          <Favorites />
         </div>
       </div>
     )

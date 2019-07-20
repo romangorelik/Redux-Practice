@@ -2,7 +2,8 @@ const initialState = {
   teamInfo: {
     strDescriptionEN: ''
   },
-  teamRSS: []
+  teamRSS: [],
+  teamFavorites: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -13,6 +14,10 @@ function rootReducer(state = initialState, action) {
   } else if (action.type === 'ADD_RSS') {
     return Object.assign({}, state, {
       teamRSS: action.payload
+    })
+  } else if (action.type === 'ADD_FAVORITE') {
+    return Object.assign({}, state, {
+      teamFavorites: state.teamFavorites.concat(action.payload)
     })
   }
   return state
